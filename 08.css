@@ -1,0 +1,9 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div#descripcion {
+  width: 250px;
+  height: 250px;
+  background-color: #DCEDC8;
+}
