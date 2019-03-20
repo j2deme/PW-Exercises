@@ -1,0 +1,42 @@
+strong, b {
+  color: green;
+}
+
+u {
+  font-style: italic;
+}
+
+em, i {
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
+  font-size: 4em;
+}
+
+em {
+  font-size: 2em;
+}
+
+/* DIVS */
+div {
+  display: inline-block;
+  border: 1px black dashed;
+  width: 100px;
+  height: 100px;
+}
+
+#principal {
+  font-weight: bolder;
+}
+
+div.rojo,
+.rojo {
+  background-color: red;
+  border-color: yellow;
+  border-style: solid;
+}
+
+.apple {
+  font-size: 5em;
+  text-align: middle;
+  width: 256px;
+  height: 256px;
+}
