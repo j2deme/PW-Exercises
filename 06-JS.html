@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS</title>
+</head>
+<body>
+  <h1 id="msj">Demo</h1>
+
+  <script>
+    const MAYOR = 18;
+    let _edad = prompt("¿Que edad tienes?");
+    let edad = Number(_edad);
+    console.log(edad);
+    if (isNaN(edad))
+      console.error("La edad no es numero");
+
+    let banner = document.querySelector('#msj');
+    //console.log(banner);
+    if (edad >= MAYOR) {
+      banner.innerHTML = "Eres mayor de edad";
+      document.body.style.background = "#64B5F6";
+      document.body.style.color = "#212121";
+    } else {
+      banner.innerHTML = "Warning! FBI!";
+      document.body.style.background = "#E53935";
+      document.body.style.color = "#FFFF00";
+    }
+  </script>
+
+  <script>
+    /*let msj = prompt("Mensaje:");
+    alert(msj);
+
+    let edad = Number(prompt("Edad?"));
+    console.log(edad);
+    if (edad >= 18) {
+      alert("Mayor de edad");
+    } else {
+      alert("Menor de edad!");
+    }*/
+  </script>
+</body>
+</html>
