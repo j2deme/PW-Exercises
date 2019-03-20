@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Forms</title>
+</head>
+<body>
+  <h1>Formularios</h1>
+  <!-- GET: procesa_formulario.php?campo1=dato1&campo2=dato2&campoN=datoN -->
+  <!-- POST: se envían los datos del formulario "empaquetados" -->
+  <form action="04-Forms.html" method="POST">
+    <h2>Datos del usuario</h2>
+    <label for="usuario">Usuario</label>
+    <input type="text" placeholder="Ingresa tu usuario" name="usuario" id="usuario" autocomplete="false">
+    <br>
+    <label for="contrasena">Contraseña</label>
+    <input type="password" placeholder="Ingresa tu contraseña" name="contrasena" id="contrasena">
+
+    <h2>Diseña tu pizza</h2>
+    <h3>Tipo de Masa</h3>
+    <label for="masa">Elige tu tipo de masa:</label>
+    <select name="masa" id="masa">
+      <option value="cl">Clásica</option>
+      <option value="cr">Crunchy</option>
+      <option value="li">Light</option>
+    </select>
+
+    <h3>Tamaño</h3>
+    <label for="t_chica">
+      <input type="radio" name="tamano" id="t_chica"> Chica
+    </label>
+    <label for="t_mediana">
+      <input type="radio" name="tamano" id="t_mediana" checked> Mediana
+    </label>
+    <label for="t_grande">
+      <input type="radio" name="tamano" id="t_grande"> Grande
+    </label>
+
+    <h3>Ingredientes</h3>
+    <label for="i_queso">
+      <input type="checkbox" name="i_queso" id="i_queso" checked> 🧀
+    </label>
+    <label for="i_chile">
+      <input type="checkbox" name="i_chile" id="i_chile"> 🌶
+    </label>
+    <label for="i_pina">
+      <input type="checkbox" name="i_pina" id="i_pina"> 🍍
+    </label>
+    <label for="i_tocino">
+      <input type="checkbox" name="i_tocino" id="i_tocino"> 🥓
+    </label>
+    <label for="i_pollo">
+      <input type="checkbox" name="i_pollo" id="i_pollo"> 🍗
+    </label>
+
+    <h3>Extras</h3>
+    <label for="e_queso">
+      <input type="checkbox" name="extras" id="e_queso"> 🧀 x 2
+    </label>
+    <label for="e_refresco">
+      <input type="checkbox" name="extras" id="e_refresco"> 🥤
+    </label>
+    <label for="e_papas">
+      <input type="checkbox" name="extras" id="e_papas"> 🍟
+    </label>
+    <label for="e_postre">
+      <input type="checkbox" name="extras" id="e_postre"> 🍰
+    </label>
+
+    <h3>Fecha de Entrega</h3>
+    <input type="date" name="fecha" id="fecha">
+    <hr>
+    <!--<input type="submit" value="Enviar">-->
+    <button type="submit"><b>Enviar</b></button>
+  </form>
+</body>
+</html>
