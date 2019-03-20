@@ -1,0 +1,23 @@
+body {
+  font-family: Calibri, Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  color: #212121;
+}
+
+h1 {
+  border-bottom: 3px #EF6C00 solid;
+  display: inline-block;
+}
+
+h2 {
+  color: #F57C00;
+}
+
+button {
+  background-color: #EF6C00;
+  width: 10em;
+  height: 3em;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
