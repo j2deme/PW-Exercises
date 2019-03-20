@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Imágenes y Tablas</title>
+</head>
+<body>
+  <h1>Imágenes</h1>
+  <img src="img/pikachu.png" alt="Pikachu PNG">
+  <img src="img/pikachu.gif" alt="Pikachu GIF">
+  <img src="img/pokemon.jpg" alt="Pokemon JPG" width="485" height="275">
+
+  <h1>Tablas</h1>
+  <h2>Básica</h2>
+  <table border="1">
+    <tr>
+      <td>1.1</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <td>2.1</td>
+      <td>2.2</td>
+      <td>2.3</td>
+    </tr>
+  </table>
+
+  <h2>Combinación de celdas</h2>
+  <table border="1">
+    <tr>
+      <td>1.1</td>
+      <td colspan="2">1.2</td>
+    </tr>
+    <tr>
+      <td>2.1</td>
+      <td rowspan="2">2.2</td>
+      <td>2.3</td>
+    </tr>
+    <tr>
+      <td>3.1</td>
+      <td>3.3</td>
+    </tr>
+  </table>
+
+  <h2>Avanzada</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Número de control</th>
+        <th>Nombre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>05690361</td>
+        <td>Jaime Jesús Delgado Meraz</td>
+      </tr>
+      <tr>
+        <td>15690199</td>
+        <td>Samuel Villanueva</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2">Lista de estudiantes</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th colspan="2">Nombre Completo</th>
+        <th rowspan="2">Edad</th>
+      </tr>
+      <tr>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+      </tr>
+    </thead>
+  </table>
+</body>
+</html>
