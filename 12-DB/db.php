@@ -1,17 +1,63 @@
 <?php
+class DB {
+  private $db;
+
+  //$db = new DB("root","root12345","demo");
+  function DB($user, $password, $dbName, $host = "127.0.0.1", $driver = null, $port = null){
+    $this->db = null;
+    $driver = (is_null($driver)) ? "mysql" : $driver;
+    $port = (is_null($port)) ? "3306" : $port;
+    try {
+      $this->db = new PDO("$driver:host=$host;dbname=$dbName;port=$port", $user, $password);
+    } catch (PDOException $e){
+      echo $e->getMessage();
+      die();
+    }
+  }
+
+  //$db->select("usuarios","name,password","WHERE id = 2");
+  public function select($table, $columns = "*", $where = "1"){
+    if(!is_null($this->db)){
+      $sql = "SELECT $columns FROM $table WHERE $where";
+      try {
+        $st = $this->db->prepare($sql);
+        $st->setFetchMode(PDO::FETCH_ASSOC);
+        $st->execute();
+        return $st->fetchAll();
+      } catch (PDOException $e) {
+        echo "Error: $sql ({$e->getMessage()})";
+      }
+    }
+
+    throw new Exception("No hay conexión la BD");
+  }
+
+  public function first($table, $columns = "*", $where = "1"){
+    $res = $this->select($table, $columns, $where);
+    if(count($res) >= 1){
+      return $res[0];
+    } else {
+      return [];
+    }
+  }
+
+  public function save($table, $columns, $values){
+    $sql = "INSERT INTO $table ($columns) VALUES ($values)";
+    try {
+      $st = $this->db->prepare($sql);
+      $st->execute();
+    } catch (PDOException $e) {
+      echo $e->getMessage();
+    }
+  }
+}
 //print_r(PDO::getAvailableDrivers());
 //ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'SUPASSWORD';
-try {
-  $dbUser = "root"; // Usuario del docente
-  $dbPassword = "root12345"; // Contraseña del docente
-  $db = new PDO("mysql:host=127.0.0.1;dbname=demo;port=3306", $dbUser, $dbPassword);
-} catch (PDOException $e){
-  echo $e->getMessage();
-}
+
 //var_dump($db);
 
 // Obtener datos de una tabla
-$st = $db->prepare("SELECT * FROM usuarios");
+/*$st = $db->prepare("SELECT * FROM usuarios");
 $st->setFetchMode(PDO::FETCH_ASSOC); //PDO::FETCH_OBJ
 $st->execute();
 $usuarios = $st->fetchAll(); //*fetch* para un solo registro
@@ -48,5 +94,5 @@ if($existe){
   } catch (PDOException $e) {
     echo $e->getMessage();
   }
-}
+}*/
 ?>
