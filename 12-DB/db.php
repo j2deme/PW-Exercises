@@ -50,6 +50,47 @@ class DB {
       echo $e->getMessage();
     }
   }
+
+  public function update($table, $pares, $id = null){
+    if(!is_null($id)){
+      $id = (int) $id;
+      try {
+        $sql = "UPDATE $table SET $pares WHERE id = $id";
+        $st = $this->db->prepare($sql);
+        $st->execute();
+      } catch (PDOException $e) {
+        echo $e->getMessage();
+      }
+    }
+  }
+
+  public function delete($table, $cond){
+    if(!empty($cond)){
+      try {
+        $st = $this->db->prepare("DELETE FROM $table WHERE $cond");
+        $st->execute();
+      } catch (PDOException $e) {
+        echo $e->getMessage();
+      }
+    }
+  }
+
+  public function sql($sql){
+    try {
+      $sql = trim($sql);
+      $isSelect = (strtoupper($sql[0]) == 'S');
+      $st = $this->db->prepare($sql);
+      if($isSelect){
+        $st->setFetchMode(PDO::FETCH_ASSOC);
+      }
+      $st->execute();
+      if($isSelect){
+        return $st->fetchAll();
+      }
+    } catch (PDOException $e) {
+      echo $e->getMessage();
+    }
+  }
 }
 //print_r(PDO::getAvailableDrivers());
 //ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'SUPASSWORD';
