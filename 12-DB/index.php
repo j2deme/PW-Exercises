@@ -22,7 +22,9 @@ $res = $db->sql("SELECT COUNT(*) AS cantidad FROM usuarios WHERE nombre LIKE '%l
 include_once "header.php";
 ?>
 <h1>Usuarios</h1>
-<table class="ui table">
+<a href="new-user.php" class="ui primary icon button">Nuevo usuario <i class="ui user icon"></i></a>
+
+<table class="ui striped table">
   <thead>
     <tr>
       <th>#</th>
