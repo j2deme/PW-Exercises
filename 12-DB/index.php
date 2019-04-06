@@ -34,8 +34,9 @@ include_once "header.php";
   <tbody>
     <?php
     foreach ($usuarios as $u) {
+      $id = $u['id'];
       echo "<tr>
-        <td>{$u['id']}</td>
+        <td>$id</td>
         <td>{$u['nombre']}</td>
         <td>{$u['usuario']}</td>
         <td>
