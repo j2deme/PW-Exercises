@@ -43,7 +43,7 @@ include_once "header.php";
         <td>{$u['usuario']}</td>
         <td>
           <a>Actualizar</a>&nbsp;
-          <a>Borrar</a>
+          <a href=\"delete-user.php?id=$id\">Borrar</a>
         </td>
       </tr>";
     }
